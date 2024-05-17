@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+nav span a{
+    color: wheat;
+    text-decoration: none;
+}
+nav span a:hover{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+#span{
+    position: relative;
+}
+#count{
+    position: absolute;
+    top: 0;
+}
+.title{
+    font-size: 2rem;
+}
+.Names{
+    font-size: 2em;
+}
