@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="./api.css">
+    <!-- CSS only -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .DetailsText {
+            font-size: 3em;
+            text-align: center;
+            padding-top: 1em;
+        }
+    </style>
+</head>
+
+<body onload="displayProductDetails()">
+    <header class="bg-dark p-4 text-white d-flex flex-wrap justify-content-between">
+        <div>
+            <p class="title">Shopper..</p>
+        </div>
+        <div>
+            <nav class="Names d-flex flex-wrap">
+                <span class="m-2"><a href="index.html">Home</a></span>
+                <span class="m-2"><a href="index.html#electronics">Electronics</a></span>
+                <span class="m-2"><a href="index.html#mens-clothing">Men's Clothing</a></span>
+                <span class="m-2"><a href="index.html#womens-clothing">Women's Clothing</a></span>
+                <span class="m-2"><a href="index.html#jewelery">Jewelery</a></span>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container mt-5">
+        <div>
+            <p class="DetailsText">Product Details</p>
+        </div>
+        <main id="product-details" class="row">
+            <!-- Product details will be displayed here -->
+        </main>
+    </section>
+
+    <script src="./Details.js"></script>
+</body>
+
+</html>
