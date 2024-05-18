@@ -1,1 +1,166 @@
-function LoadCategory(){fetch("https://fakestoreapi.com/products/categories").then((function(t){return t.json()})).then((function(t){t.unshift("all"),t.forEach((function(t){const e=document.createElement("option");e.text=t.toUpperCase(),e.value=t,document.getElementById("LstCategory").appendChild(e)}))}))}function LoadProducts(t){document.querySelector("main").textContent="",fetch(t).then((function(t){return t.json()})).then((function(t){t.forEach((function(t){const e=document.createElement("div");e.className="card m-2 p-2",e.style.width="18rem",e.innerHTML=`<a href="./Details.html" onclick="PhotoClick()"><img src="${t.image}" class="card-img-top" height="160em" alt=${t.title}></a>\n                <div class="card-header" style="height:7em;overflow:auto;">\n                <p>${t.title}</p>\n                </div>\n                <div class="card-body">\n                <dl>\n                <dt>Price</dt>\n                <dd>$ ${t.price}</dd>\n                <dt>Rating</dt>\n                <dd>${t.rating.rate} <span class="bi bi-star-fill text-success"></span>\n                ${t.rating.count}</dd>\n                </dl>\n                </div>\n                <div class="card-footer">\n                <button class="btn btn-danger w-100" onclick="AddClick(${t.id})">\n                Add to Cart\n                <span class="bi bi-cart">\n                </button>\n                </div>\n                `,document.querySelector("main").appendChild(e)}))}))}function bodyload(){LoadCategory(),LoadProducts("https://fakestoreapi.com/products"),GetCount()}function changeCategory(){const t=document.getElementById("LstCategory").value;LoadProducts("all"==t?"https://fakestoreapi.com/products":`https://fakestoreapi.com/products/category/${t}`)}function NavClick(){LoadProducts("https://fakestoreapi.com/products")}function ElectronicsClick(){LoadProducts("https://fakestoreapi.com/products/category/electronics")}function MenClothing(){LoadProducts("https://fakestoreapi.com/products/category/men's clothing")}function WomenClothing(){LoadProducts("https://fakestoreapi.com/products/category/women's clothing")}function Jewelery(){LoadProducts("https://fakestoreapi.com/products/category/jewelery")}function GetCount(){document.getElementById("lblCount").innerHTML=cartItems.length}function AddClick(t){fetch(`https://fakestoreapi.com/products/${t}`).then((function(t){return t.json()})).then((function(t){cartItems.push(t),alert(`${t.title} \n Added to Cart`),GetCount()}))}function ShowCart(){document.querySelector("tbody").innerHTML="";let t=0;cartItems.map((function(e){const n=document.createElement("tr"),o=document.createElement("td"),c=document.createElement("td"),d=document.createElement("td"),r=document.createElement("td");o.innerHTML=e.title,c.innerHTML=`$${e.price.toFixed(2)}`,d.innerHTML=`<img src="${e.image}" width="50" height="50">`,r.innerHTML=`<button class="bi bi-trash btn btn-danger" id="DeleteButton" onclick="DeleteClick(${e.id})"></button>`,n.appendChild(o),n.appendChild(c),n.appendChild(d),n.appendChild(r),document.querySelector("tbody").appendChild(n),t+=e.price}));const e=document.createElement("tr"),n=document.createElement("td"),o=document.createElement("td");n.innerHTML="<strong>Total:</strong>",o.innerHTML=`<strong>$${t.toFixed(2)}</strong>`,e.appendChild(n),e.appendChild(o),document.querySelector("tbody").appendChild(e)}var cartItems=[];function DeleteClick(t){const e=cartItems.filter((e=>e.id!==t));cartItems=[],e.forEach((function(t){cartItems.push(t)})),ShowCart(),alert(`Proudct Id ${t} Deleted`)}
+
+
+
+
+function LoadCategory(){
+    fetch("https://fakestoreapi.com/products/categories")
+    .then(function(res){
+        return res.json();
+    })
+    .then(function(categories){
+        categories.unshift("all");
+        categories.forEach(function(category){
+            const option = document.createElement("option");
+            option.text = category.toUpperCase();
+            option.value = category;
+            document.getElementById('LstCategory').appendChild(option);
+        })
+    })
+    };
+    
+    function LoadProducts(url){
+        document.querySelector("main").textContent = "";
+        fetch(url)
+        .then(function(res){
+            return res.json();
+        })
+        .then(function(products){
+            products.forEach(function(product){
+                const card = document.createElement("div");
+                card.className = "card m-2 p-2"
+                card.style.width = "18rem";
+                card.innerHTML = `<a href=./Details.html?id=${product.id} >
+                
+                <img src=${product.image} class="card-img-top" height="160em" alt=${product.title}>
+                </a>
+                <div class="card-header" style="height:7em;overflow:auto;">
+                <p>${product.title}</p>
+                </div>
+                <div class="card-body">
+                <dl>
+                <dt>Price</dt>
+                <dd>$ ${product.price}</dd>
+                <dt>Rating</dt>
+                <dd>${product.rating.rate} <span class="bi bi-star-fill text-success"></span>
+                ${product.rating.count}</dd>
+                </dl>
+                </div>
+                <div class="card-footer">
+                <button class="btn btn-danger w-100" onclick="AddClick(${product.id})">
+                Add to Cart
+                <span class="bi bi-cart">
+                </button>
+                </div>
+                `;
+                document.querySelector("main").appendChild(card);
+            })
+        })
+    }
+    
+    function bodyload(){
+        LoadCategory();
+        LoadProducts("https://fakestoreapi.com/products");
+        GetCount();
+    }
+    
+    function changeCategory(){
+        const CategoryName = document.getElementById("LstCategory").value;
+        if(CategoryName=="all"){  
+            LoadProducts("https://fakestoreapi.com/products");
+        }else{
+            LoadProducts(`https://fakestoreapi.com/products/category/${CategoryName}`)
+        }
+    }
+    
+    function NavClick(){
+        LoadProducts("https://fakestoreapi.com/products"); 
+    }
+    
+    function ElectronicsClick(){
+        LoadProducts("https://fakestoreapi.com/products/category/electronics")
+    }
+    
+    function MenClothing(){
+        LoadProducts("https://fakestoreapi.com/products/category/men's clothing");
+    }
+    function WomenClothing(){
+        LoadProducts("https://fakestoreapi.com/products/category/women's clothing")
+    }
+    
+    function Jewelery(){
+        LoadProducts("https://fakestoreapi.com/products/category/jewelery")
+    }
+    
+    
+    function GetCount(){
+        document.getElementById("lblCount").innerHTML= cartItems.length;
+    }
+    
+    function AddClick(id){
+        fetch(`https://fakestoreapi.com/products/${id}`)
+        .then(function(res){
+            return res.json();
+        })
+        .then(function(product){
+            cartItems.push(product);
+            alert(`${product.title} \n Added to Cart`);
+            GetCount();
+        })
+    }
+ 
+    
+    function ShowCart() {
+        document.querySelector("tbody").innerHTML = "";
+        let totalPrice = 0; // Initialize total price variable
+    
+        cartItems.map(function(item) {
+            const tr = document.createElement("tr");
+            const tdTitle = document.createElement("td");
+            const tdPrice = document.createElement("td");
+            const tdImage = document.createElement("td");
+            const tdDelete = document.createElement("td");
+    
+            tdTitle.innerHTML = item.title;
+            tdPrice.innerHTML = `$${item.price.toFixed(2)}`;
+            tdImage.innerHTML = `<img src="${item.image}" width="50" height="50">`;
+            tdDelete.innerHTML = `<button class="bi bi-trash btn btn-danger" id="DeleteButton" onclick="DeleteClick(${item.id})"></button>`;
+    
+            tr.appendChild(tdTitle);
+            tr.appendChild(tdPrice);
+            tr.appendChild(tdImage);
+            tr.appendChild(tdDelete);
+            document.querySelector("tbody").appendChild(tr);
+    
+            totalPrice += item.price; // Add item price to total price
+        });
+    
+        // Display total price
+        const trTotal = document.createElement("tr");
+        const tdTotalLabel = document.createElement("td");
+        const tdTotalAmount = document.createElement("td");
+    
+        // tdTotalLabel.colSpan = 3;
+        tdTotalLabel.innerHTML = "<strong>Total:</strong>";
+        // tdTotalAmount.colSpan = 1;
+        tdTotalAmount.innerHTML = `<strong>$${totalPrice.toFixed(2)}</strong>`;
+    
+        trTotal.appendChild(tdTotalLabel);
+        trTotal.appendChild(tdTotalAmount);
+        document.querySelector("tbody").appendChild(trTotal);
+    }
+    
+
+    var cartItems = [];
+    
+    function DeleteClick(id){
+        const filterCart = cartItems.filter((item)=>{
+            return item.id!== id
+        })
+        cartItems=[];
+        filterCart.forEach(function(item){
+            
+            cartItems.push(item)
+        })
+        ShowCart();
+       alert(`Proudct Id ${id} Deleted`)
+    }
