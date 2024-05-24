@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +10,116 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
 
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /* .header{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: black;
+            color: wheat;
+            font-size: 2em;
+            font-family: 'Courier New',;
+            padding: 20px;
+        }
+        nav ul{
+            display: flex;
+            flex-wrap: wrap;
+            }
+        nav ul li{
+            padding-right: 12px;
+            list-style: none;
+        }
+        .header button{
+            background-color: red;
+            padding: 10px;
+            font-size: 1em;
+            border-top-left-radius: 20px;
+            border-top-right-radius:20px ;
+            border-bottom-left-radius:20px ;
+            border-bottom-right-radius:20px ;
+            color: wheat;
+        }
+        .header button:hover{
+            color: black;
+            background-color: white;
+            box-shadow:inset 5px 5px 5px red;
+            cursor: pointer;
+        } */
+ 
+ body{
+    background-color: rgb(219, 219, 215);
+ }
+ section{
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+ }
+ section h2{
+    font-size: 1.8em;
+    /* max-width: 656px; */
+    margin-top: 200px;
+    margin-left: 100px;   
+ }
+ section p{
+    /* font-size: 2em; */
+    display: flex;
+    font-size: 1.4em;
+    margin-top: 10px;
+    /* max-width: 700px; */
+    margin-left: 100px;   
+ }
+ section button{
+    margin-left: 95px;
+    margin-top: 50px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    border-top-left-radius: 10px;
+    border-top-right-radius:10px ;
+    border-bottom-left-radius:10px ;
+    border-bottom-right-radius:10px ;
+ }
+ .img img{
+    margin-top: 130px;
+    margin-left: 100px;
+    border-top-left-radius:150px;
+    border-top-right-radius:150px;
+    border-bottom-left-radius:150px;
+    border-bottom-right-radius:150px;
+ }
+ .girl{
+    margin-top: 120px;
+    border-top-left-radius:150px;
+    border-top-right-radius:150px;
+    margin-left: 100px;
+ }
+ .boy{
+    margin-top:-100px;
+    margin-left: 100px;
+    border-bottom-left-radius:150px;
+    border-bottom-right-radius:150px;
+ }
+</style>
 </head>
-
-<body onload="bodyload()" class="container-fluid">
+<body>
     <header class="bg-dark p-4 text-white d-flex flex-wrap justify-content-between">
         <div>
             <p class="title">Shopper..</p>
         </div>
         <div>
-            <nav class="Names d-flex flex-wrap">
-                <span class="m-2"><a href="javascript:NavClick()">Home</a></span>
-                <span class="m-2"><a href="javascript:ElectronicsClick()">Electronics</a></span>
-                <span class="m-2"><a href="javascript:MenClothing()">Men's Clothing</a></span>
-                <span class="m-2"><a href="javascript:WomenClothing()">Women's Clothing</a></span>
-                <span class="m-2"><a href="javascript:Jewelery()">Jewelery</a></span>
+            <nav>
+                <ul class="sidebar d-flex flex-wrap">
+                    <li class="p-3"><a href="#">Home</a></li>
+                    <li class="p-3"><a href="./index.html">Electronics</a></li>
+                    <li class="p-3"><a href="./index.html">Men's Clothing</a></li>
+                    <li class="p-3"><a href="./index.html">Women's Clothing</a></li>
+                    <li class="p-3"><a href="./index.html">Jewelery</a></li>
+                </ul>
             </nav>
         </div>
         <div class="text-dark">
@@ -72,31 +166,30 @@
                 </div>
             </div>
         </div>
-        
-    </header>
-
-    <section class="row">
-        <div class="col-2">
-            <nav class="m-3">Select Category</nav>
-            <div>
-                <select id="LstCategory" class="form-control mt-3 m-2" onchange="changeCategory()">
-                </select>
-            </div>
+        <div class="icon">
+            <span class="bi bi-list d-none" onclick="showSidebar()"></span>
         </div>
-
-        <main class="col-10 d-flex flex-wrap overflow-auto mt-5">
-
-        </main>
-
+    </header>
+    <section>
+        <div>
+            <h2>EXPERIENCE THE HEIGHT OF FAISHON WITH OUR EXQUISITE DESINER PIECES.</h2>
+        <p>Where style, sophistication, exclusivity is the forefront of our collection. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quaerat nostrum quia nam earum, libero, expedita impedit delectus provident quo eveniet.</p>
+        <button>Discover Our Products</button>
+        </div>
+        <div>
+            <div style="display: flex;">
+                <div class="img">
+                    <img src="./images/img1.jpg" alt="Img not found" width="150">
+                </div>
+                <div>
+                    <img src="./images/img3.png" class="girl" alt="Img not found" width="250">
+                </div>
+                
+            </div>
+            <img class="boy" src="./images/img2.png" alt="Img not found" width="150">
+            
+        </div>
     </section>
-    <script src="./api.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
+    <!-- <script src="./api.js"></script> -->
 </body>
-
 </html>
