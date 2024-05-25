@@ -16,42 +16,8 @@
             padding: 0;
             margin: 0;
         }
-        /* .header{
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            background-color: black;
-            color: wheat;
-            font-size: 2em;
-            font-family: 'Courier New',;
-            padding: 20px;
-        }
-        nav ul{
-            display: flex;
-            flex-wrap: wrap;
-            }
-        nav ul li{
-            padding-right: 12px;
-            list-style: none;
-        }
-        .header button{
-            background-color: red;
-            padding: 10px;
-            font-size: 1em;
-            border-top-left-radius: 20px;
-            border-top-right-radius:20px ;
-            border-bottom-left-radius:20px ;
-            border-bottom-right-radius:20px ;
-            color: wheat;
-        }
-        .header button:hover{
-            color: black;
-            background-color: white;
-            box-shadow:inset 5px 5px 5px red;
-            cursor: pointer;
-        } */
  
- body{
+ .body{
     background-color: rgb(219, 219, 215);
  }
  section{
@@ -120,90 +86,56 @@
  li a{
     font-size: 2em;
  }
+ footer{
+    background-color: black;
+    padding: 50px;
+    color:wheat;
+  
+ }
 </style>
 </head>
 <body>
-    <header class="bg-dark p-4 text-white d-flex flex-wrap justify-content-between">
-        <div>
-            <p class="title">Shopper..</p>
-        </div>
-        <div>
-            <nav>
-                <ul class="d-flex flex-wrap">
-                    <!-- <li class="p-3"><a href="#">Home</a></li> -->
-                    <li class="p-3"><a href="./Home.html">Electronics</a></li>
-                    <li class="p-3"><a href="./Home.html">Men's Clothing</a></li>
-                    <li class="p-3"><a href="./Home.html">Women's Clothing</a></li>
-                    <li class="p-3"><a href="./Home.html">Jewelery</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!-- <div class="text-dark">
-
-            <button type="button" onclick="ShowCart()" class="btn btn-outline-light position-relative"
-                data-toggle="modal" data-target="#exampleModalCenter">
-                Your Cart<span class="bi bi-cart4" id="span"><span id="lblCount"
-                        class="badge bg-danger pos4 end-0 top-0 text-white rounded rounded-circle">0</span></span>
-            </button>
-
-
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title text-dark" id="exampleModalLongTitle">Card Items</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Title</th>
-                                        <th>Price</th>
-                                        <th>Preview</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                                <tfoot>
-                                    
-                                </tfoot>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_OBqX0gO5OHQWWE" async> </script> </form>
-                        </div>
-                    </div>
-                </div>
+    <div class="body">
+        <header class="bg-dark p-4 text-white d-flex flex-wrap justify-content-between">
+            <div>
+                <p class="title">Shopper..</p>
             </div>
-        </div>
-        -->
-    </header>
-    <section>
-        <div>
-            <h2>EXPERIENCE THE HEIGHT OF FAISHON WITH OUR EXQUISITE DESINER PIECES.</h2>
-        <p>Where style, sophistication, exclusivity is the forefront of our collection. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quaerat nostrum quia nam earum, libero, expedita impedit delectus provident quo eveniet.</p>
-        <a href="Home.html"><button>Discover Our Products</button></a>
-        </div>
-        <div>
-            <div style="display: flex;">
-                <div class="img">
-                    <img src="./images/img1.jpg" alt="Img not found" width="150">
+            <div>
+                <nav>
+                    <ul class="d-flex flex-wrap">
+                       
+                        <li class="p-3"><a href="./Home.html">Electronics</a></li>
+                        <li class="p-3"><a href="./Home.html">Men's Clothing</a></li>
+                        <li class="p-3"><a href="./Home.html">Women's Clothing</a></li>
+                        <li class="p-3"><a href="./Home.html">Jewelery</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section>
+            <div>
+                <h2>EXPERIENCE THE HEIGHT OF FAISHON WITH OUR EXQUISITE DESINER PIECES.</h2>
+            <p>Where style, sophistication, exclusivity is the forefront of our collection. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quaerat nostrum quia nam earum, libero, expedita impedit delectus provident quo eveniet.</p>
+            <a href="Home.html"><button>Discover Our Products</button></a>
+            </div>
+            <div>
+                <div style="display: flex;">
+                    <div class="img">
+                        <img src="./images/img1.jpg" alt="Img not found" width="150">
+                    </div>
+                    <div>
+                        <img src="./images/img3.png" class="girl" alt="Img not found" width="250">
+                    </div>
+                    
                 </div>
-                <div>
-                    <img src="./images/img3.png" class="girl" alt="Img not found" width="250">
-                </div>
+                <img class="boy" src="./images/img2.png" alt="Img not found" width="150">
                 
             </div>
-            <img class="boy" src="./images/img2.png" alt="Img not found" width="150">
-            
-        </div>
-    </section>
-    <!-- <script src="./api.js"></script> -->
+        </section>
+    </div>
+    <footer class="text-center">
+        <h3>This website is copyright by <span class="text-danger">&hearts;</span>Rohit</h3>
+    </footer>
+   
 </body>
 </html>

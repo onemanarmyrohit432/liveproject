@@ -24,3 +24,8 @@ nav span a:hover{
 .Names{
     font-size: 2em;
 }
+footer{
+    background-color: black;
+    padding: 50px;
+    color:wheat;
+ }
